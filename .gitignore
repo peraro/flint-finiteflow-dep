@@ -5,4 +5,5 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 CMakeFiles/*
-
+compile_commands.json
+run*.sh
