@@ -5,8 +5,8 @@ This is a very minimal version of the Flint library which contains all
 the Flint dependencies of the Ampff library.  It is only intended for
 Ampff users which do not wish to install the full Flint library.
 
-Unlike the full Flint library, this version has no external
-dependencies.
+Unlike the full Flint library, this version only depends on the GMP
+library.
 
 The contents of the original README of Flint are in README_ORIGINAL.
 
@@ -16,12 +16,19 @@ http://www.flintlib.org/
 Installation
 ------------
 
-This version of Flint uses the CMake build system.  It can be
-installed with the following command
+This version of Flint uses the CMake build system, and it also depends
+on the GMP library.  Both dependencies are often preinstalled or can
+be easily installed using popular package managers on UNIX-like
+systems (including Homebrew for MAC OSX).
+
+This library can be installed with the following commands
 
 ```
-cmake -DCMAKE_INSTALL_PREFIX=/installation/path/prefix && make install
+cmake -DCMAKE_PREFIX_PATH=/gmp/installation/path/prefix \
+      -DCMAKE_INSTALL_PREFIX=/installation/path/prefix
+make install
 ```
 
 where the `-DCMAKE_INSTALL_PREFIX` option can be omitted for
-installation in a default path.
+installation in a default path, and the `-DCMAKE_PREFIX_PATH` is only
+needed if GMP is not installed in a default path.

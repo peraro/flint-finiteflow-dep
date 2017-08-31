@@ -2,13 +2,19 @@ project(flint C)
 
 cmake_minimum_required(VERSION 3.4)
 
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
 set(CMAKE_BUILD_TYPE Release)
 
 option(BUILD_SHARED_LIBS "build shared libraries" ON)
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+find_package(GMP REQUIRED)
+include_directories(SYSTEM ${GMP_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${GMP_TARGETS})
+
+include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(FLINT_SOURCES
     ulong_extras/gcd.c

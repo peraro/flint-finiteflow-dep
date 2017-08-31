@@ -17,8 +17,8 @@
 #if !defined(_MSC_VER)
 #include <sys/param.h> /* for BSD define */
 #endif
-#if 0 /* not needed by ampff */
 #include <gmp.h>
+#if 0 /* not needed by ampff */
 #include <mpfr.h>
 #endif /* not needed by ampff */
 #include <stdarg.h>
@@ -137,14 +137,13 @@ FLINT_DLL void flint_set_abort(void (*func)(void));
 #define WORD_MIN LONG_MIN
 #endif
 
-#ifndef GMP_LIMB_BITS /* needed by ampff */
-#define GMP_LIMB_BITS 64
-#endif /* needed by ampff */
 #if GMP_LIMB_BITS == 64
     #define FLINT_BITS 64
     #define FLINT_D_BITS 53
     #define FLINT64 1
 #else
+    /* Error: ampff currently needs 64-bit integers */
+    #error "This version of Flint requires 64-bit integers"
     #define FLINT_BITS 32
     #define FLINT_D_BITS 31
 #endif
