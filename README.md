@@ -1,9 +1,10 @@
-FLINT 2 for Ampff
-=================
+FLINT 2 for FiniteFlow
+======================
 
 This is a very minimal version of the Flint library which contains all
-the Flint dependencies of the Ampff library.  It is only intended for
-Ampff users which do not wish to install the full Flint library.
+the Flint dependencies of the FiniteFlow library.  It is only intended
+for FiniteFlow users which do not wish to install the full Flint
+library.
 
 Unlike the full Flint library, this version only depends on the GMP
 library.
@@ -19,7 +20,7 @@ Installation
 This version of Flint uses the CMake build system, and it also depends
 on the GMP library.  Both dependencies are often preinstalled or can
 be easily installed using popular package managers on UNIX-like
-systems (including Homebrew for MAC OSX).
+systems.
 
 This library can be installed with the following commands
 
