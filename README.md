@@ -13,7 +13,7 @@ library.
 The contents of the original README of Flint are in README_ORIGINAL.
 
 For more information on the full Flint library, see
-http://www.flintlib.org/
+[http://www.flintlib.org/](http://www.flintlib.org/)
 
 
 Installation
