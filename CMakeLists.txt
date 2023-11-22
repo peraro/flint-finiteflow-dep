@@ -24,6 +24,7 @@ set(FLINT_SOURCES
     ulong_extras/mulmod_preinv.c
     ulong_extras/powmod2_ui_preinv.c
     ulong_extras/dummy.c
+    generic_files/clz_tab.c
     )
 
 add_library(flint ${FLINT_SOURCES})
